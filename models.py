@@ -3,7 +3,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-# can use the below import should you choose to initialize the weights of your Net
 import torch.nn.init as I
 
 
@@ -11,8 +10,6 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        
-        ## TODO: Define all the layers of this CNN, the only requirements are:
         ## 1. This network takes in a square (same width and height), grayscale image as input
         ## 2. It ends with a linear layer that represents the keypoints
         ## it's suggested that you make this last layer output 136 values, 2 for each of the 68 keypoint (x, y) pairs
@@ -34,7 +31,6 @@ class Net(nn.Module):
         self.fc3 = nn.Linear(800, 136)
 
     def forward(self, x):
-        ## TODO: Define the feedforward behavior of this model
         ## x is the input image and, as an example, here you may choose to include a pool/conv step:
         ## x = self.pool(F.relu(self.conv1(x)))
         # two conv/relu + pool layers
